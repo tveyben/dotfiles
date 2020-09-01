@@ -1,2 +1,3 @@
+# Put user info outside the repo for privacy
 [include]
 	path = ~/.config/tve/.git_user_info
