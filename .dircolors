@@ -478,3 +478,10 @@ EXEC 01;31  # Unix
 .aes 34
 .enc 34
 .sqlite 34
+
+
+# TvE fix make 'windows' dirs (mode 777 outside linux filesystem) readable
+# SOURCE: https://unix.stackexchange.com/questions/241726/fix-ls-colors-for-directories-with-777-permission
+#
+OTHER_WRITABLE 36 # dir that is sticky and other-writable (+t,o+w)
+# STICKY 36 # dir with the sticky bit set (+t) and not other-writable
