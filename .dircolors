@@ -164,7 +164,7 @@ NORMAL 00
 # normal file
 FILE 00
 # directory
-DIR 36
+DIR 34
 # symbolic link
 LINK 35
 
@@ -483,5 +483,5 @@ EXEC 01;31  # Unix
 # TvE fix make 'windows' dirs (mode 777 outside linux filesystem) readable
 # SOURCE: https://unix.stackexchange.com/questions/241726/fix-ls-colors-for-directories-with-777-permission
 #
-OTHER_WRITABLE 36 # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 34 # dir that is sticky and other-writable (+t,o+w)
 # STICKY 36 # dir with the sticky bit set (+t) and not other-writable
