@@ -69,6 +69,11 @@ export GIT_PS1_SHOWCOLORHINTS=1
 # export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\$ "'
 export GIT_PS1_SHOWUPSTREAM="auto"
 
+# TvE stop cursor from blinking
+# https://github.com/microsoft/terminal/issues/1379#issuecomment-874152787
+echo -e -n "\e[2 q"
+
+
 if [ "$color_prompt" = yes ]; then
     # TvE - how to get git branch in color ?
     # Det er grundet solarized!
