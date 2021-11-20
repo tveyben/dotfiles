@@ -557,15 +557,13 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
- ;; TvE add org mode like line movement in evil mode
- ;; (define-key evil-normal-state-map (kbd "M-<down>") 'move-text-down)
- ;; (define-key evil-normal-state-map (kbd "M-<up>")   'move-text-up)
+ ;; TvE move lines in evil mode
+ 561   ;; https://github.com/syl20bnr/spacemacs/issues/12563
+ 562   (global-set-key (kbd "<C-S-up>")    'drag-stuff-up)
+ 563   (global-set-key (kbd "<C-S-down>")  'drag-stuff-down)
+ 564   (global-set-key (kbd "<C-S-left>")  'drag-stuff-left)
+ 565   (global-set-key (kbd "<C-S-right>") 'drag-stuff-right))
 
-  (define-key evil-visual-state-map (kbd "M-<down>") (concat ":m '>+1" (kbd "RET") "gv=gv"))
-  (define-key evil-visual-state-map (kbd "M-<up>")   (concat ":m '<-2" (kbd "RET") "gv=gv"))
-  (define-key evil-normal-state-map (kbd "M-<down>") (concat ":m +1" (kbd "RET") "=="))
-  (define-key evil-normal-state-map (kbd "M-<up>")   (concat ":m -2" (kbd "RET") "=="))
-  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
