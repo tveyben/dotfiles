@@ -557,12 +557,17 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
- ;; TvE move lines in evil mode
- 561   ;; https://github.com/syl20bnr/spacemacs/issues/12563
- 562   (global-set-key (kbd "<C-S-up>")    'drag-stuff-up)
- 563   (global-set-key (kbd "<C-S-down>")  'drag-stuff-down)
- 564   (global-set-key (kbd "<C-S-left>")  'drag-stuff-left)
- 565   (global-set-key (kbd "<C-S-right>") 'drag-stuff-right))
+
+  ;; TvE move lines in evil mode
+  ;; https://github.com/syl20bnr/spacemacs/issues/12563
+  (global-set-key (kbd "<C-S-up>")    'drag-stuff-up)
+  (global-set-key (kbd "<C-S-down>")  'drag-stuff-down)
+  (global-set-key (kbd "<C-S-left>")  'drag-stuff-left)
+  (global-set-key (kbd "<C-S-right>") 'drag-stuff-right))
+
+;; TvE configure org 
+(setq org-agenda-files '("~/org"))
+
 
 
 ;; Do not write anything past this comment. This is where Emacs will
