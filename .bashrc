@@ -18,7 +18,10 @@ shopt -s histappend
 # Every time a new prompt is issued (ie whenever you get through running a command),
 # first the history is appended to the file, then it is cleared from the current shell's memory, 
 # then the current shell reloads the history from the file.
-export PROMPT_COMMAND='history -a; history -n;'
+# 2021-12-25 disabled as multiple Windows Terminal sessions "pollute" each others history as it's repeatedly reloaded
+
+# each WT session should be independently history-wise
+#export PROMPT_COMMAND='history -a; history -n;'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
