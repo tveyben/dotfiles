@@ -564,11 +564,11 @@ before packages are loaded."
   (global-set-key (kbd "<C-S-up>")    'drag-stuff-up)
   (global-set-key (kbd "<C-S-down>")  'drag-stuff-down)
   (global-set-key (kbd "<C-S-left>")  'drag-stuff-left)
-  (global-set-key (kbd "<C-S-right>") 'drag-stuff-right))
+  (global-set-key (kbd "<C-S-right>") 'drag-stuff-right)
 
   ;; Configure org 
-  (setq org-agenda-files '("~/org"))
-
+  (setq org-startup-indented t)
+  (setq org-agenda-files '("~/org")))
 
 
 ;; Do not write anything past this comment. This is where Emacs will
