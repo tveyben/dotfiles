@@ -566,7 +566,13 @@ before packages are loaded."
   (global-set-key (kbd "<C-S-left>")  'drag-stuff-left)
   (global-set-key (kbd "<C-S-right>") 'drag-stuff-right)
 
-  ;; Configure org 
+  ;; magit
+  ;; https://magit.vc/manual/magit/Status-Buffer.html
+  ;; https://magit.vc/manual/magit/Default-Bindings.html
+  (define-key global-map (kbd "C-x g") 'magit-status)
+  (define-key global-map (kbd "C-c g") 'magit-file-dispatch)
+
+  ;; Configure org
   (setq org-startup-indented t)
   (setq org-agenda-files '("~/org")))
 
