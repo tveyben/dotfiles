@@ -563,10 +563,19 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  ;; my spacemacs key bindings (o = user space; SPC o ...)
-  (spacemacs/declare-prefix "o" "TvE commands")
-  ;; https://develop.spacemacs.org/doc/DOCUMENTATION.html#binding-keys
+  ;; MyFunctions
+  (defun tve/yadm-status ()
+    (interactive)
+    (magit-status "/yadm::")
+  )
 
+  ;; KEYBOARD SHORTCUTS
+  ;; Spacemacs key bindings (o = user space; SPC o ...)
+  ;; https://develop.spacemacs.org/doc/DOCUMENTATION.html#binding-keys
+  (spacemacs/declare-prefix "o" "TvE commands")
+  (spacemacs/set-leader-keys "oy" 'tve/yadm-status)
+
+  ;; Emacs vanilla key bindings
   ;; Move lines in evil mode
   ;; https://github.com/syl20bnr/spacemacs/issues/12563
   (global-set-key (kbd "<C-S-up>")    'drag-stuff-up)
@@ -577,8 +586,9 @@ before packages are loaded."
   ;; magit
   ;; https://magit.vc/manual/magit/Status-Buffer.html
   ;; https://magit.vc/manual/magit/Default-Bindings.html
-  (define-key global-map (kbd "C-x g") 'magit-status)
-  (define-key global-map (kbd "C-c g") 'magit-file-dispatch)
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "C-c g") 'magit-file-dispatch)
+  (global-set-key (kbd "C-c y") 'tve/yadm-status)
 
   ;; Configure org
   ;; TODO move all org files to the 'OneDrive/org' folder
@@ -595,8 +605,6 @@ before packages are loaded."
                  (tramp-login-env (("SHELL") ("/bin/sh")))
                  (tramp-remote-shell "/bin/sh")
                  (tramp-remote-shell-args ("-c"))))
-  (spacemacs/declare-prefix "oy" "yadm status")
-  (spacemacs/set-leader-keys "oy" (lambda () (interactive) (magit-status "/yadm::")))
 )
 
 
