@@ -572,7 +572,7 @@ before packages are loaded."
   ;; KEYBOARD SHORTCUTS
   ;; Spacemacs key bindings (o = user space; SPC o ...)
   ;; https://develop.spacemacs.org/doc/DOCUMENTATION.html#binding-keys
-  (spacemacs/declare-prefix "o" "TvE commands")
+  (spacemacs/declare-prefix "o" "von Eyben commands")
   (spacemacs/set-leader-keys "oy" 'tve/yadm-status)
 
   ;; Emacs vanilla key bindings
