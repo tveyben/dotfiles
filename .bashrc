@@ -1,3 +1,5 @@
+# TODO Fix shellcheck errors
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -155,7 +157,5 @@ if [[ -n "$WSL_DISTRO_NAME" ]]; then
   #echo "This is WSL"
   export LIBGL_ALWAYS_INDIRECT=1
   export DISPLAY=$(ip route|awk '/^default/{print $3}'):0
-else
-  # echo "This is not WSL"
 fi
 
