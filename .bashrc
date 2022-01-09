@@ -151,13 +151,11 @@ fi
 #export PS1='\w $(__git_ps1 "(%s) ")$ '
 
 # WSL2 GUI support
-if grep -q Microsoft /proc/version; then
-  :  
-  echo "Ubuntu on Windows" 
-else
-  :
-  # echo "Native Linux - prepare for WSL2 GUI (vcxsrv)"
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
+  #echo "This is WSL"
   export LIBGL_ALWAYS_INDIRECT=1
   export DISPLAY=$(ip route|awk '/^default/{print $3}'):0
+else
+  # echo "This is not WSL"
 fi
 
