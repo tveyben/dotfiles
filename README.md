@@ -1,4 +1,4 @@
-# YADM - Yet Anoteher Dotfiles Manager
+# YADM - Yet Another Dotfiles Manager
 the configuration for my linux environment
 
 ## On a new PC
