@@ -68,7 +68,6 @@ This function should only modify configuration layer settings."
      syntax-checking
      version-control
      treemacs
-     ;; emoji
      ranger
      themes-megapack
      command-log
@@ -107,9 +106,13 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-   ;; If non-nil then enable support for the portable dumper. You'll need
-   ;; to compile Emacs 27 from source following the instructions in file
+   ;; If non-nil then enable support for the portable dumper. You'll need to
+   ;; compile Emacs 27 from source following the instructions in file
    ;; EXPERIMENTAL.org at to root of the git repository.
+   ;;
+   ;; WARNING: pdumper does not work with Native Compilation, so it's disabled
+   ;; regardless of the following setting when native compilation is in effect.
+   ;;
    ;; (default nil)
    dotspacemacs-enable-emacs-pdumper nil
 
@@ -215,6 +218,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; The minimum delay in seconds between number key presses. (default 0.4)
    dotspacemacs-startup-buffer-multi-digit-delay 0.4
+
+   ;; If non-nil, show file icons for entries and headings on Spacemacs home buffer.
+   ;; This has no effect in terminal or if "all-the-icons" package or the font
+   ;; is not installed. (default nil)
+   dotspacemacs-startup-buffer-show-icons nil
 
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
@@ -594,6 +602,8 @@ before packages are loaded."
   ;; TODO move all org files to the 'OneDrive/org' folder
   (setq org-startup-indented t)
   (setq org-agenda-files '("~/org"))
+  ;; Enable '<s' TAB snippet expansion from org 9.2
+  (require 'org-tempo)
 
   ;; yadm + magit
   ;; https://www.reddit.com/r/emacs/comments/gjukb3/yadm_magit/
