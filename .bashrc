@@ -159,3 +159,6 @@ if [[ -n "$WSL_DISTRO_NAME" ]]; then
   export DISPLAY=$(ip route|awk '/^default/{print $3}'):0
 fi
 
+# Make autocompletion caseinsensitive
+bind 'set completion-ignore-case on'
+
