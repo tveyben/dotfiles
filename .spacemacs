@@ -40,18 +40,7 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (auto-completion :variables
-                      auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'cycle
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.1
-                      auto-completion-minimum-prefix-length 2
-                      auto-completion-idle-delay 0.2
-                      auto-completion-private-snippets-directory nil
-                      auto-completion-enable-snippets-in-popup nil
-                      auto-completion-enable-help-tooltip nil
-                      auto-completion-use-company-box nil
-                      auto-completion-enable-sort-by-usage nil)
+     auto-completion
      ;; better-defaults
      emacs-lisp
      git
@@ -599,11 +588,28 @@ before packages are loaded."
   (global-set-key (kbd "C-c y") 'tve/yadm-status)
 
   ;; Configure org
-  ;; TODO move all org files to the 'OneDrive/org' folder
   (setq org-startup-indented t)
-  (setq org-agenda-files '("~/org"))
-  ;; Enable '<s' TAB snippet expansion from org 9.2
-  (require 'org-tempo)
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "|" "DONE(d!)")
+          (sequence "WAIT(w@/!)" "|" "CANC(k@)")))
+
+  ;; 'OneDriveMain' is an alias in WSL2 filesystem to my Win10 homedir
+  ;; OneDriveMain -> '/mnt/c/Users/$USER/OneDrive
+  (setq org-agenda-files '("~/OneDriveMain/OrgFiles/"))
+
+  ;; Enable '<s' TAB snippet expansion 
+  (with-eval-after-load 'org
+    ;; This is needed as of Org 9.2
+    (require 'org-tempo)
+    (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+    (add-to-list 'org-structure-template-alist '("py" . "src python"))
+    (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+  )
+
 
   ;; yadm + magit
   ;; https://www.reddit.com/r/emacs/comments/gjukb3/yadm_magit/
