@@ -566,6 +566,9 @@ before packages are loaded."
     (magit-status "/yadm::")
   )
 
+  ;; evil
+  (setq evil-want-fine-undo t)
+
   ;; KEYBOARD SHORTCUTS
   ;; Spacemacs key bindings (o = user space; SPC o ...)
   ;; https://develop.spacemacs.org/doc/DOCUMENTATION.html#binding-keys
