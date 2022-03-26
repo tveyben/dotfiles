@@ -1,5 +1,10 @@
 # Put user info outside the repo for privacy
+#$ cat .config/git/git_user_info
+#[user]
+#   name = <name>
+#   email = <e-mail>
+
 [include]
-	path = ~/.config/tve/.git_user_info
+	path = ~/.config/git/git_user_info
 [core]
 	editor = vim
