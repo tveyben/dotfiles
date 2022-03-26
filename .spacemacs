@@ -580,6 +580,13 @@ before packages are loaded."
   (spacemacs/declare-prefix "o" "von Eyben commands")
   (spacemacs/set-leader-keys "oy" 'tve/yadm-status)
 
+  ;; babel
+  ;; remove confirmation for evaluating specific languages
+  (defun my-org-confirm-babel-evaluate (lang body)
+    (not (member lang '("plantuml" "python" "sh"))))
+  (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+  ;; https://emacs.stackexchange.com/questions/21124/execute-org-mode-source-blocks-without-security-confirmation
+
   ;; emacs vanilla key bindings
   ;; move lines in evil mode
   ;; https://github.com/syl20bnr/spacemacs/issues/12563
