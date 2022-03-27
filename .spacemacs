@@ -626,7 +626,7 @@ before packages are loaded."
 
   ;; 'OneDriveMain' is an alias in WSL2 filesystem to my Win10 homedir
   ;; OneDriveMain -> '/mnt/c/Users/$USER/OneDrive
-  (setq org-agenda-files '("~/OneDriveMain/OrgFiles/"))
+  (setq org-agenda-files '("~/OneDriveMain/OrgFiles"))
 
   ;; enable '<[KEY] TAB' snippet expansion
   ;; EG '<pl TAB' for a plantuml block
