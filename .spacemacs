@@ -571,6 +571,9 @@ before packages are loaded."
     (magit-status "/yadm::")
   )
 
+  ;; editing
+  (global-visual-line-mode t)
+
   ;; evil
   (setq evil-want-fine-undo t)
 
