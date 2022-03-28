@@ -604,6 +604,7 @@ before packages are loaded."
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "C-c g") 'magit-file-dispatch)
   (global-set-key (kbd "C-c y") 'tve/yadm-status)
+  (setq-default git-magit-status-fullscreen t)
 
   ;; plantuml
   ;; https://github.com/skuro/plantuml-mode#quick-guide
