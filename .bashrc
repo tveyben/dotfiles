@@ -67,7 +67,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # TvE add git prompt
-source ~/.config/git-prompt.sh/git-prompt.sh
+source ~/.config/git/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWCOLORHINTS=1
