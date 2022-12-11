@@ -5,7 +5,7 @@ The configuration for my linux environment
 
 ### Prepare for storing the personal git info outside the repo
 ````mkdir ~/.config/tve
-cp .gitconfig ~/.config/$USER/.git_user_info
+cp ~/.gitconfig ~/.config/$USER/.git_user_info
 ````
 
 ### Move existing dotfiles before cloning
