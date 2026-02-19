@@ -66,6 +66,7 @@ TERM dvtm-256color
 TERM Eterm
 TERM eterm-color
 TERM fbterm
+TERM foot
 TERM gnome
 TERM gnome-256color
 TERM jfbterm
@@ -73,6 +74,7 @@ TERM konsole
 TERM konsole-256color
 TERM kterm
 TERM linux
+TERM linux-16color
 TERM linux-c
 TERM mach-color
 TERM mlterm
@@ -165,7 +167,7 @@ NORMAL 00
 # normal file
 FILE 00
 # directory
-DIR 34
+DIR 36
 # symbolic link
 LINK 35
 
@@ -288,7 +290,6 @@ EXEC 01;31  # Unix
 .mng 33
 .pbm 33
 .pcx 33
-.pdf 33
 .pgm 33
 .png 33
 .PNG 33
@@ -309,6 +310,10 @@ EXEC 01;31  # Unix
 .yuv 33
 .NEF 33 # Nikon RAW format
 .nef 33
+.webp 33
+.heic 33
+.HEIC 33
+.avif 33
 
 # Audio
 .aac 33
@@ -377,6 +382,7 @@ EXEC 01;31  # Unix
 .otp 31
 .fla 31
 .psd 31
+.pdf 31
 
 # Archives, compressed
 .7z   1;35
@@ -474,7 +480,6 @@ EXEC 01;31  # Unix
 # The brightmagenta (Solarized: purple) color is free for you to use for your
 # custom file type
 .gpg 34
-.gpg 34
 .pgp 34
 .asc 34
 .3des 34
@@ -482,9 +487,3 @@ EXEC 01;31  # Unix
 .enc 34
 .sqlite 34
 .db 34
-
-# TvE fix make 'windows' dirs (mode 777 outside linux filesystem) readable
-# SOURCE: https://unix.stackexchange.com/questions/241726/fix-ls-colors-for-directories-with-777-permission
-#
-OTHER_WRITABLE 34 # dir that is sticky and other-writable (+t,o+w)
-# STICKY 36 # dir with the sticky bit set (+t) and not other-writable
