@@ -165,3 +165,4 @@ bind 'set completion-ignore-case on'
 # doom
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+eval "$(zellij setup --generate-auto-start bash)"
