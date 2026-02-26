@@ -165,4 +165,30 @@ bind 'set completion-ignore-case on'
 # doom
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-eval "$(zellij setup --generate-auto-start bash)"
+# --- BEGIN Zellij + Cargo Setup ---
+# Only for interactive shells
+[[ $- != *i* ]] && return
+
+# --- PATH Setup (idempotent) ---
+if [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+# Load Cargo environment if it exists
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+# --- Zellij Auto-start ---
+# Only start if not already inside Zellij
+if [ -z "$ZELLIJ_PID" ]; then
+    # Eval setup once, idempotently
+    eval "$(zellij setup --generate-auto-start bash)"
+fi
+# --- END Zellij + Cargo Setup ---
+
+
